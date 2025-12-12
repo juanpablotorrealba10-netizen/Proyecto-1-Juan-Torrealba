@@ -1,0 +1,286 @@
+/* --- Variables y Reset --- */
+:root {
+    --google-blue: #1a73e8;
+    --google-text-dark: #202124;
+    --google-text-medium: #5f6368;
+    --google-background-light: #f8f9fa;
+    --google-border-light: #dadce0;
+    --max-width-content: 1200px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--google-text-dark);
+    line-height: 1.5;
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+    color: var(--google-blue);
+    transition: color 0.2s;
+}
+
+/* --- 1. Contenedores de Ancho (Centrado) --- */
+.nav-content-wrapper,
+.hero-content-wrapper,
+.cards-grid-wrapper,
+.footer-content-wrapper {
+    max-width: var(--max-width-content);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* --- 2. Header y Navegación (FLEXBOX) --- */
+.header-nav-main {
+    border-bottom: 1px solid var(--google-border-light);
+}
+
+.nav-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    height: 64px;
+}
+
+.logo-link {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--google-text-dark);
+}
+
+.nav-links-desktop a {
+    margin-left: 28px;
+    font-size: 14px;
+    color: var(--google-text-medium);
+    font-weight: 400;
+}
+
+.btn-contact {
+    color: var(--google-blue);
+    font-weight: 500;
+    font-size: 14px;
+    margin-right: 20px;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--google-text-medium);
+}
+
+/* --- 3. Sección Héroe (FLEXBOX) --- */
+.hero-section {
+    background-color: var(--google-background-light); 
+    padding: 80px 0;
+}
+
+.hero-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 450px;
+}
+
+.hero-text-block {
+    max-width: 50%;
+}
+
+.hero-text-block h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    line-height: 1.1;
+}
+
+.hero-text-block p {
+    font-size: 18px;
+    margin-bottom: 32px;
+    color: var(--google-text-dark);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: background-color 0.2s, opacity 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--google-blue);
+    color: white;
+    border: 1px solid var(--google-blue);
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+/* IMPLEMENTACIÓN DE LA IMAGEN DEL HERO CON LA RUTA MÁS SIMPLE */
+.hero-image-placeholder {
+    width: 45%;
+    min-height: 400px;
+    
+    background-image: url('hero-banner.jpg'); /* RUTA CORREGIDA: Sin nombre de carpeta */
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    border-radius: 8px;
+}
+
+/* --- 4. Sección de Tarjetas (CSS GRID) --- */
+.content-cards-section {
+    padding: 80px 0;
+}
+
+.cards-grid-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+}
+
+.card {
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--google-border-light);
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.05); 
+}
+
+.card h3 {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.card p {
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: var(--google-text-medium);
+}
+
+.card a {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+/* IMPLEMENTACIÓN DE LOS ICONOS CON LA RUTA MÁS SIMPLE */
+.card-icon-placeholder {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    background-size: 60%; 
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card-sustainability .card-icon-placeholder {
+    background-color: #e6f7ff; 
+    background-image: url('icono-sostenibilidad.png'); /* RUTA CORREGIDA */
+}
+
+.card-leadership .card-icon-placeholder {
+    background-color: #fff7e6; 
+    background-image: url('icono-liderazgo.png'); /* RUTA CORREGIDA */
+}
+
+.card-news .card-icon-placeholder {
+    background-color: #fce8e6; 
+    background-image: url('icono-noticias.png'); /* RUTA CORREGIDA */
+}
+
+
+/* --- 5. Pie de Página (FLEXBOX) --- */
+.footer-section {
+    background-color: var(--google-background-light);
+    border-top: 1px solid var(--google-border-light);
+}
+
+.footer-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 24px;
+    font-size: 13px;
+    color: var(--google-text-medium);
+}
+
+.footer-nav-links a {
+    color: var(--google-text-medium);
+    margin-left: 20px;
+}
+
+.footer-social-links {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    background-color: var(--google-border-light);
+    border-radius: 50%;
+    color: var(--google-text-medium);
+    font-size: 12px;
+}
+
+/* --- Media Queries (Responsividad) --- */
+@media (max-width: 992px) {
+    .nav-links-desktop {
+        display: none;
+    }
+    .menu-icon {
+        display: block;
+    }
+    .hero-content-wrapper {
+        flex-direction: column; 
+        text-align: center;
+    }
+    .hero-text-block {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+    .hero-image-placeholder {
+        width: 100%;
+    }
+    .footer-content-wrapper {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .footer-nav-links a {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-text-block h1 {
+        font-size: 40px;
+    }
+    .hero-section {
+        padding: 50px 0;
+    }
+    .content-cards-section {
+        padding: 50px 0;
+    }
+
+    img{
+width:1300px; height: 300px;
+}
+
+
+}
